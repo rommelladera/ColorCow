@@ -1,0 +1,10 @@
+﻿* {
+    font: 10px Arial;
+}
+
+#mainCanvas {
+    width: 960px;
+    height:720px;
+    background-color: red;
+    border: 5px solid green;
+}
