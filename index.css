@@ -24,6 +24,7 @@
 }*/
 
 body {
+    overflow: hidden;
     -ms-touch-action: none;
 }
 
