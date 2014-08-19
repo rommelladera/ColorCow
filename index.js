@@ -8,7 +8,7 @@ window.onload = function () {
 
     
 
-    window.addEventListener("orientationchange", orientationChange(), false);
+    window.addEventListener("orientationchange", orientationChange, false);
 
     var imageObj = new Image();
     imageObj.src = 'images/tree.jpg';
