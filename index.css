@@ -23,6 +23,10 @@
     opacity: 0.8;
 }*/
 
+body {
+    -ms-touch-action: none;
+}
+
 #mainScreen {
     width: 100%;
     height: 100%;
