@@ -23,6 +23,12 @@ window.onload = function () {
         //canvas.style.width = 200 + "px";
         //canvas.style.height = 150 + "px";
     };
+
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
+
+    //document.body.addEventListener('touchstart', function (e) { e.preventDefault(); });
     
 }
 
