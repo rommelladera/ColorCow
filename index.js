@@ -1,26 +1,20 @@
 ﻿
 
 window.onload = function () {
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+
 
     var canvas = document.getElementById("mainCanvas");
     var ctx = canvas.getContext("2d");
 
-    canvas.width = w-2; //480;
-    canvas.height = h - 2; //360;
+    
 
-    window.addEventListener("orientationchange", function () {
-        ctx.fillText(w, 10, 10);
-        ctx.fillText(h, 40, 10);
-        ctx.fillText(window.orientation, 10, 30);
-    }, false);
+    window.addEventListener("orientationchange", orientationChange(), false);
 
     var imageObj = new Image();
     imageObj.src = 'images/tree.jpg';
 
     imageObj.onload = function () {
-        
+
         //ctx.drawImage(imageObj, 10, 10);
         //canvas.style.width = 200 + "px";
         //canvas.style.height = 150 + "px";
@@ -31,7 +25,21 @@ window.onload = function () {
     //}, false);
 
     //document.body.addEventListener('touchstart', function (e) { e.preventDefault(); });
-    
+
+    function orientationChange() {
+        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+
+        canvas.width = w - 2; //480
+        canvas.height = h - 2; //360;
+
+        ctx.fillText(w, 10, 10);
+        ctx.fillText(h, 40, 10);
+        ctx.fillText(window.orientation, 10, 30);
+    };
+
+    orientationChange();
+
 }
 
 
