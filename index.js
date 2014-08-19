@@ -28,7 +28,7 @@ window.onload = function () {
         e.preventDefault();
     }, false);
 
-    //document.body.addEventListener('touchstart', function (e) { e.preventDefault(); });
+    document.body.addEventListener('touchstart', function (e) { e.preventDefault(); });
     
 }
 
