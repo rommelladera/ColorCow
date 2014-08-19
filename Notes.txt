@@ -1,0 +1,3 @@
+﻿canvas scaling works, check click events coordinates against canvas.
+
+canter canvas

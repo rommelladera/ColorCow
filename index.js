@@ -1,6 +1,30 @@
-﻿$(document).ready(function () {
+﻿
 
-});
+window.onload = function () {
+    var canvas = document.getElementById("mainCanvas");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = 960;
+    canvas.height = 720;
+
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0, 0, 150, 75);
+
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    var imageObj = new Image();
+    imageObj.src = 'images/tree.jpg';
+
+    imageObj.onload = function () {
+        
+        ctx.drawImage(imageObj, 69, 50);
+        canvas.style.width = 200 + "px";
+        canvas.style.height = 150 + "px";
+    };
+    
+}
 
 
 //$(zzzdocument).ready(function () {

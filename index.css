@@ -28,3 +28,7 @@
     height: 100%;
     border: 1px solid #0026ff;
 }
+
+#mainCanvas {
+    border: 1px solid blue;
+}
