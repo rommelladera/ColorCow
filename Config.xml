@@ -15,4 +15,6 @@
 
   <preference name="DisallowOverscroll" value="true"/>
   
+  <preference name="UIWebViewBounce" value="false" />
+  
 </widget>
