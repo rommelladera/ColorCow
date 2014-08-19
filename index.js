@@ -20,8 +20,8 @@ window.onload = function () {
     imageObj.onload = function () {
         
         ctx.drawImage(imageObj, 69, 50);
-        canvas.style.width = 200 + "px";
-        canvas.style.height = 150 + "px";
+        //canvas.style.width = 200 + "px";
+        //canvas.style.height = 150 + "px";
     };
     
 }

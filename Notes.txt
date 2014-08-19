@@ -1,3 +1,9 @@
 ﻿canvas scaling works, check click events coordinates against canvas.
 
-canter canvas
+center canvas
+
+scaling canvas to viewport
+
+-disable scrolling
+-disable pinch zoom
+-always landscape
