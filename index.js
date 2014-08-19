@@ -10,8 +10,11 @@ window.onload = function () {
     canvas.width = w-2; //480;
     canvas.height = h - 2; //360;
 
-    ctx.fillText(w, 10, 10);
-    ctx.fillText(h, 40, 10);
+    window.addEventListener("orientationchange", function () {
+        ctx.fillText(w, 10, 10);
+        ctx.fillText(h, 40, 10);
+        ctx.fillText(window.orientation, 10, 30);
+    }, false);
 
     var imageObj = new Image();
     imageObj.src = 'images/tree.jpg';
