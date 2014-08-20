@@ -7,7 +7,6 @@ canvas.orientation = null;
 canvas.onLoad = function () {
     canvas.width = viewport.width - 1; //480
     canvas.height = viewport.height - 1; //360;
-
     canvas.orientation = viewport.orientation;
 
     canvas.style.background = "blue";
@@ -20,6 +19,5 @@ canvas.onLoad = function () {
 };
 
 canvas.onOrientationChange = function (orientation) {
-    canvas.orientation = orientation;
-    alert(canvas.orientation);
+    canvas.onLoad();
 };
