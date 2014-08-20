@@ -4,21 +4,40 @@ window.onload = function () {
 
 
     var canvas = document.getElementById("mainCanvas");
-    var ctx = canvas.getContext("2d");
+    var context = canvas.getContext("2d");
 
+    var rectWidth = 150;
+    var rectHeight = 75;
+
+    // translate context to center of canvas
+    
+    //context.translate(canvas.width / 2, canvas.height / 2);
+    context.translate(10, 10);
+
+
+    context.rotate(90 * Math.PI / 180);
+    //context.translate(100, 100);
+
+    // rotate 45 degrees clockwise
+    //context.rotate(Math.PI / 4);
     
 
-    window.addEventListener("orientationchange", orientationChange, false);
+    context.fillStyle = 'blue';
+    context.fillRect(0, 0, rectWidth, rectHeight);
 
-    var imageObj = new Image();
-    imageObj.src = 'images/tree.jpg';
+    //context.fillText("Hello", 10, 10);
 
-    imageObj.onload = function () {
+    //window.addEventListener("orientationchange", orientationChange, false);
 
-        //ctx.drawImage(imageObj, 10, 10);
-        //canvas.style.width = 200 + "px";
-        //canvas.style.height = 150 + "px";
-    };
+    //var imageObj = new Image();
+    //imageObj.src = 'images/tree.jpg';
+
+    //imageObj.onload = function () {
+
+    //    //ctx.drawImage(imageObj, 10, 10);
+    //    //canvas.style.width = 200 + "px";
+    //    //canvas.style.height = 150 + "px";
+    //};
 
     //document.addEventListener('touchmove', function (e) {
     //    e.preventDefault();
@@ -26,19 +45,49 @@ window.onload = function () {
 
     //document.body.addEventListener('touchstart', function (e) { e.preventDefault(); });
 
-    function orientationChange() {
-        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    //window.onresize = function () {
+    //    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    //    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 
-        canvas.width = w - 2; //480
-        canvas.height = h - 2; //360;
+    //    canvas.width = w - 2; //480
+    //    canvas.height = h - 2; //360;
 
-        ctx.fillText(w, 10, 10);
-        ctx.fillText(h, 40, 10);
-        ctx.fillText(window.orientation, 10, 30);
-    };
+    //    var orientation = (w < h) ? "Portrait" : "Lanscape";
 
-    orientationChange();
+    //    if (orientation == "Portrait") {
+    //        // Rotate canvas
+    //        ctx.translate(canvas.width / 2, canvas.height / 2);
+    //        ctx.rotate(20.0 * Math.PI / 180.0);
+    //    }
+
+        
+
+    //    ctx.fillText(w + "," + h, 10, 10);
+    //    ctx.fillText(orientation, 10, 30);
+    //    ctx.fillText(window.orientation, 10, 50);
+
+    //    if (orientation == "Portrait") {
+    //        // Rotate canvas
+    //        ctx.translate(canvas.width / 2, canvas.height / 2);
+    //        ctx.rotate(20.0 * Math.PI / 180.0);
+    //    }
+    //};
+
+    //function orientationChange() {
+    //    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    //    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+
+    //    canvas.width = w - 2; //480
+    //    canvas.height = h - 2; //360;
+
+    //    ctx.fillText(w, 10, 10);
+    //    ctx.fillText(h, 40, 10);
+    //    ctx.fillText(window.orientation, 10, 30);
+    //};
+
+    //orientationChange();
+
+    //window.onresize();
 
 }
 
