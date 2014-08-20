@@ -100,7 +100,7 @@ window.onresize = function () {
         viewport.onResize();
 
         if (canvas.orientation != viewport.orientation) {
-            canvas.onOrientationChange(viewport.orientation);
+            canvas.onOrientationChange();
         }
 
     }, 100);
