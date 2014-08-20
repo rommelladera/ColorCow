@@ -1,5 +1,6 @@
 ﻿window.onload = function () {
 
+    viewport.onLoad();
     canvas.onLoad();
 
 
@@ -96,15 +97,10 @@ window.onresize = function () {
     if (timeOut != null) clearTimeout(timeOut);
 
     timeOut = setTimeout(function () {
-        alert("window.onresize");
+        viewport.onResize();
 
-        var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-        var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-
-        orientation = (viewportWidth < viewportHeight) ? "Portrait" : "Lanscape";
-
-        if (canvas.orientation != orientation) {
-            canvas.onOrientationChange(orientation);
+        if (canvas.orientation != viewport.orientation) {
+            canvas.onOrientationChange(viewport.orientation);
         }
 
     }, 100);

@@ -5,13 +5,11 @@ canvas.context = canvas.getContext("2d");
 canvas.orientation = null;
 
 canvas.onLoad = function () {
-    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    debugger;
+    canvas.width = viewport.width - 1; //480
+    canvas.height = viewport.height - 1; //360;
 
-    canvas.width = viewportWidth - 1; //480
-    canvas.height = viewportHeight - 1; //360;
-
-    canvas.orientation = (viewportWidth < viewportHeight) ? "Portrait" : "Lanscape";
+    canvas.orientation = viewport.orientation;
 
     canvas.style.background = "blue";
 
@@ -23,5 +21,6 @@ canvas.onLoad = function () {
 };
 
 canvas.onOrientationChange = function (orientation) {
-    alert("canvas.onOrientationChange");
+    canvas.orientation = orientation;
+    alert(canvas.orientation);
 };
