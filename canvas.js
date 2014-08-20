@@ -5,7 +5,6 @@ canvas.context = canvas.getContext("2d");
 canvas.orientation = null;
 
 canvas.onLoad = function () {
-    debugger;
     canvas.width = viewport.width - 1; //480
     canvas.height = viewport.height - 1; //360;
 
