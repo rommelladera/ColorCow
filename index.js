@@ -91,14 +91,13 @@
 
 }
 
-window.onresize = function () { alert("window.onresize"); };
-window.addEventListener("resize", function () {
-    alert("resize");
-});
+window.onresize = function () {
+    alert("window.onresize");
+};
 
-window.onorientationchange = function () { alert("window.onorientationchange"); };
 window.addEventListener("orientationchange", function () {
     alert("orientationchange");
+    alert(window.orientation);
 });
 
 //$(zzzdocument).ready(function () {
