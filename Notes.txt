@@ -7,3 +7,6 @@ scaling canvas to viewport
 -disable scrolling
 -disable pinch zoom
 -always landscape
+
+work with canvas.styleWidth and canvas.styleHeight
+then center canvas.
