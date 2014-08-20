@@ -91,6 +91,15 @@
 
 }
 
+window.onresize = function () { alert("window.onresize"); };
+window.addEventListener("resize", function () {
+    alert("resize");
+});
+
+window.onorientationchange = function () { alert("window.onorientationchange"); };
+window.addEventListener("orientationchange", function () {
+    alert("orientationchange");
+});
 
 //$(zzzdocument).ready(function () {
 //    var gameArea = document.getElementById('gameArea');
