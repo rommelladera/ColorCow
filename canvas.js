@@ -23,4 +23,5 @@ canvas.onLoad = function () {
 };
 
 canvas.onOrientationChange = function (orientation) {
+    alert("canvas.onOrientationChange");
 };

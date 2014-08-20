@@ -10,7 +10,7 @@
     //var rectHeight = 75;
 
     //// translate context to center of canvas
-    
+
     ////context.translate(canvas.width / 2, canvas.height / 2);
     //context.translate(10, 10);
 
@@ -20,7 +20,7 @@
 
     //// rotate 45 degrees clockwise
     ////context.rotate(Math.PI / 4);
-    
+
 
     //context.fillStyle = 'blue';
     //context.fillRect(0, 0, rectWidth, rectHeight);
@@ -60,7 +60,7 @@
     //        ctx.rotate(20.0 * Math.PI / 180.0);
     //    }
 
-        
+
 
     //    ctx.fillText(w + "," + h, 10, 10);
     //    ctx.fillText(orientation, 10, 30);
@@ -91,14 +91,29 @@
 
 }
 
+var timeOut = null;
 window.onresize = function () {
-    alert("window.onresize");
+    if (timeOut != null) clearTimeout(timeOut);
+
+    timeOut = setTimeout(function () {
+        alert("window.onresize");
+
+        var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+        var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+
+        orientation = (viewportWidth < viewportHeight) ? "Portrait" : "Lanscape";
+
+        if (canvas.orientation != orientation) {
+            canvas.onOrientationChange(orientation);
+        }
+
+    }, 100);
 };
 
-window.addEventListener("orientationchange", function () {
-    alert("orientationchange");
-    alert(window.orientation);
-});
+//window.addEventListener("orientationchange", function () {
+//    alert("orientationchange");
+//    alert(window.orientation);
+//});
 
 //$(zzzdocument).ready(function () {
 //    var gameArea = document.getElementById('gameArea');
