@@ -1,29 +1,29 @@
-﻿
+﻿window.onload = function () {
 
-window.onload = function () {
+    canvas.onLoad();
 
 
-    var canvas = document.getElementById("mainCanvas");
-    var context = canvas.getContext("2d");
+    //var canvas = document.getElementById("mainCanvas");
+    //var context = canvas.getContext("2d");
 
-    var rectWidth = 150;
-    var rectHeight = 75;
+    //var rectWidth = 150;
+    //var rectHeight = 75;
 
-    // translate context to center of canvas
+    //// translate context to center of canvas
     
-    //context.translate(canvas.width / 2, canvas.height / 2);
-    context.translate(10, 10);
+    ////context.translate(canvas.width / 2, canvas.height / 2);
+    //context.translate(10, 10);
 
 
-    context.rotate(90 * Math.PI / 180);
-    //context.translate(100, 100);
+    //context.rotate(90 * Math.PI / 180);
+    ////context.translate(100, 100);
 
-    // rotate 45 degrees clockwise
-    //context.rotate(Math.PI / 4);
+    //// rotate 45 degrees clockwise
+    ////context.rotate(Math.PI / 4);
     
 
-    context.fillStyle = 'blue';
-    context.fillRect(0, 0, rectWidth, rectHeight);
+    //context.fillStyle = 'blue';
+    //context.fillRect(0, 0, rectWidth, rectHeight);
 
     //context.fillText("Hello", 10, 10);
 

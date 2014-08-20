@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="canvas.js" />
     <Content Include="config.xml" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\ajax-loader.png" />
@@ -302,6 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
