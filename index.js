@@ -98,10 +98,11 @@ window.onresize = function () {
 
     timeOut = setTimeout(function () {
         viewport.onResize();
+        canvas.onResize();
 
-        if (canvas.orientation != viewport.orientation) {
-            canvas.onOrientationChange();
-        }
+        //if (canvas.orientation != viewport.orientation) {
+        //    canvas.onOrientationChange();
+        //}
 
     }, 100);
 };

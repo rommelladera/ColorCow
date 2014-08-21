@@ -11,4 +11,3 @@
         viewport.onLoad();
     }
 }
-

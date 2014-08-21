@@ -8,24 +8,40 @@ canvas.styleHeight = null;
 
 canvas.onLoad = function () {
     canvas.style.background = "blue";
-    canvas.onOrientationChange();
+    canvas.onResize();
 };
 
-canvas.onOrientationChange = function () {
-    canvas.orientation = viewport.orientation;
+canvas.onResize = function () {
     canvas.context.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.orientation = viewport.orientation;
+
     if (canvas.orientation == "Portrait") {
-        canvas.width = 360
-        canvas.height = 480;
+        canvas.width = canvas.maxHeight;
+        canvas.height = canvas.maxWidth;
+
+        canvas.styleHeight = viewport.width;
+        canvas.styleWidth = canvas.styleHeight * canvas.maxWidth / canvas.maxHeight;
+
+        canvas.style.width = canvas.styleHeight + "px";
+        canvas.style.height = canvas.styleWidth + "px";
+
+        canvas.style.marginLeft = -(canvas.styleHeight / 2) + "px";
+        canvas.style.marginTop = -(canvas.styleWidth / 2) + "px";
+
         canvas.context.rotate(90 * Math.PI / 180);
         canvas.context.translate(0, -canvas.width);
-        canvas.style.width = "75px";
-        canvas.style.height = "100px";
     } else {
-        canvas.width = 480
-        canvas.height = 360;
-        canvas.style.width = "100px";
-        canvas.style.height = "75px";
+        canvas.width = canvas.maxWidth;
+        canvas.height = canvas.maxHeight;
+
+        canvas.styleHeight = viewport.height;
+        canvas.styleWidth = canvas.styleHeight * canvas.maxWidth / canvas.maxHeight;
+
+        canvas.style.width = canvas.styleWidth + "px";
+        canvas.style.height = canvas.styleHeight + "px";
+
+        canvas.style.marginLeft = -(canvas.styleWidth / 2) + "px";
+        canvas.style.marginTop = -(canvas.styleHeight / 2) + "px";
     }
 
     canvas.onRefresh();
