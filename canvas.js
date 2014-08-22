@@ -10,9 +10,13 @@ canvas.style.top = "50%";
 canvas.style.left = "50%";
 canvas.style.background = "#db9595";
 
-canvas.onLoad = function () {
+canvas.onLoad = function (callback) {
     canvas.onResize();
-};
+
+    cowgirl.onLoad(function () {
+        if (callback != null) callback();
+    });
+}
 
 canvas.onResize = function () {
     canvas.context.clearRect(0, 0, canvas.width, canvas.height);
@@ -46,10 +50,13 @@ canvas.onResize = function () {
         canvas.style.marginLeft = -(canvas.styleWidth / 2) + "px";
         canvas.style.marginTop = -(canvas.styleHeight / 2) + "px";
     }
-
-    canvas.onRefresh();
 };
 
-canvas.onRefresh = function () {
-    cowgirl.onDraw();
+canvas.onUpdate = function (dt) {
+    cowgirl.onUpdate(dt);
+}
+
+canvas.onRender = function () {
+    canvas.context.clearRect(0, 0, canvas.width, canvas.height);
+    cowgirl.onRender();
 }

@@ -1,13 +1,9 @@
 ﻿window.onload = function () {
-    debugger;
     viewport.onLoad();
-    canvas.onLoad();
 
-    debugger;
-    cowgirl.onLoad(function () {
+    canvas.onLoad(function () {
         // start loop
-        debugger;
-        //main();
+        main();
     });
 }
 
@@ -42,20 +38,14 @@ var requestAnimFrame = (function () {
 
 var lastTime;
 function main() {
-    debugger;
     var now = Date.now();
     var dt = (now - lastTime) / 1000.0;
 
-    update(dt);
-    render();
+    if (isNaN(dt)) dt = 0;
+
+    canvas.onUpdate(dt);
+    canvas.onRender();
 
     lastTime = now;
     requestAnimFrame(main);
 };
-
-
-function update(dt) {
-}
-
-function render() {
-}
