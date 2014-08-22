@@ -282,7 +282,9 @@
     <Content Include="Content\jquery.mobile.theme-1.4.2.css" />
     <Content Include="Content\jquery.mobile.theme-1.4.2.min.css" />
     <Content Include="cowgirl.js" />
-    <Content Include="Images\cowgirl.jpg" />
+    <Content Include="Images\cowgirl %28original%29.jpg" />
+    <Content Include="Images\cowgirl %28original%29.png" />
+    <Content Include="Images\cowgirl.png" />
     <Content Include="Images\icon.jpg" />
     <Content Include="Images\tree.jpg" />
     <Content Include="index.css" />
