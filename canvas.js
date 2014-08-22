@@ -1,10 +1,10 @@
 ﻿var canvas = document.getElementById("canvas");
 canvas.context = canvas.getContext("2d");
 canvas.orientation = null;
-canvas.maxWidth = 480;
-canvas.maxHeight = 360;
-canvas.styleWidth = null;
-canvas.styleHeight = null;
+canvas.sizeX = 480;
+canvas.sizeY = 360;
+canvas.styleX = null;
+canvas.styleY = null;
 canvas.style.position = "fixed";
 canvas.style.top = "50%";
 canvas.style.left = "50%";
@@ -23,32 +23,32 @@ canvas.onResize = function () {
     canvas.orientation = viewport.orientation;
 
     if (canvas.orientation == "Portrait") {
-        canvas.width = canvas.maxHeight;
-        canvas.height = canvas.maxWidth;
+        canvas.width = canvas.sizeY;
+        canvas.height = canvas.sizeX;
 
-        canvas.styleHeight = viewport.width;
-        canvas.styleWidth = canvas.styleHeight * canvas.maxWidth / canvas.maxHeight;
+        canvas.styleY = viewport.width;
+        canvas.styleX = canvas.styleY * canvas.sizeX / canvas.sizeY;
 
-        canvas.style.width = canvas.styleHeight + "px";
-        canvas.style.height = canvas.styleWidth + "px";
+        canvas.style.width = canvas.styleY + "px";
+        canvas.style.height = canvas.styleX + "px";
 
-        canvas.style.marginLeft = -(canvas.styleHeight / 2) + "px";
-        canvas.style.marginTop = -(canvas.styleWidth / 2) + "px";
+        canvas.style.marginLeft = -(canvas.styleY / 2) + "px";
+        canvas.style.marginTop = -(canvas.styleX / 2) + "px";
 
         canvas.context.rotate(90 * Math.PI / 180);
         canvas.context.translate(0, -canvas.width);
     } else {
-        canvas.width = canvas.maxWidth;
-        canvas.height = canvas.maxHeight;
+        canvas.width = canvas.sizeX;
+        canvas.height = canvas.sizeY;
 
-        canvas.styleHeight = viewport.height;
-        canvas.styleWidth = canvas.styleHeight * canvas.maxWidth / canvas.maxHeight;
+        canvas.styleY = viewport.height;
+        canvas.styleX = canvas.styleY * canvas.sizeX / canvas.sizeY;
 
-        canvas.style.width = canvas.styleWidth + "px";
-        canvas.style.height = canvas.styleHeight + "px";
+        canvas.style.width = canvas.styleX + "px";
+        canvas.style.height = canvas.styleY + "px";
 
-        canvas.style.marginLeft = -(canvas.styleWidth / 2) + "px";
-        canvas.style.marginTop = -(canvas.styleHeight / 2) + "px";
+        canvas.style.marginLeft = -(canvas.styleX / 2) + "px";
+        canvas.style.marginTop = -(canvas.styleY / 2) + "px";
     }
 };
 
@@ -57,6 +57,26 @@ canvas.onUpdate = function (dt) {
 }
 
 canvas.onRender = function () {
-    canvas.context.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.context.clearRect(0, 0, canvas.sizeX, canvas.sizeY);
     cowgirl.onRender();
 }
+
+
+function getMousePos(evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+    };
+}
+
+canvas.addEventListener('click', function (evt) {
+    var mousePos = getMousePos(evt);
+    var point = {
+        x: mousePos.x * canvas.sizeX / canvas.styleX,
+        y: mousePos.y * canvas.sizeY / canvas.styleY
+    };
+
+    cowgirl.onClick(point)
+
+}, false);

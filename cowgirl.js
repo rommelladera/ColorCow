@@ -5,15 +5,23 @@ cowgirl.sizeX = 50;
 cowgirl.sizeY = 50;
 cowgirl.speed = 30;
 
+cowgirl.directionX = 1;
+cowgirl.directionY = 1;
+
 cowgirl.onLoad = function (callback) {
     cowgirl.src = 'images/cowgirl.png';
     cowgirl.onload = callback;
 }
 
+cowgirl.onClick = function (point) {
+    cowgirl.centerX = point.x;
+    cowgirl.centerY = point.y;
+}
+
 cowgirl.onUpdate = function (dt) {
-    cowgirl.centerX += cowgirl.speed * dt;
-    if (cowgirl.centerX > canvas.maxWidth - (cowgirl.sizeX / 2))
-        cowgirl.centerX = canvas.maxWidth - (cowgirl.sizeX / 2);
+    //cowgirl.centerX += cowgirl.speed * cowgirl.directionX * dt;
+    //if (cowgirl.centerX > canvas.sizeX - (cowgirl.sizeX / 2))
+    //    cowgirl.centerX = canvas.sizeX - (cowgirl.sizeX / 2);
 }
 
 cowgirl.onRender = function () {

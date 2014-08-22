@@ -3,7 +3,8 @@
 
     canvas.onLoad(function () {
         // start loop
-        main();
+        lastTime = Date.now();;
+        gameLoop();
     });
 }
 
@@ -37,15 +38,15 @@ var requestAnimFrame = (function () {
 })();
 
 var lastTime;
-function main() {
+function gameLoop() {
     var now = Date.now();
     var dt = (now - lastTime) / 1000.0;
 
-    if (isNaN(dt)) dt = 0;
+    //if (isNaN(dt)) dt = 0;
 
     canvas.onUpdate(dt);
     canvas.onRender();
 
     lastTime = now;
-    requestAnimFrame(main);
+    requestAnimFrame(gameLoop);
 };
