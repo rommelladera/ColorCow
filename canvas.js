@@ -5,9 +5,12 @@ canvas.maxWidth = 480;
 canvas.maxHeight = 360;
 canvas.styleWidth = null;
 canvas.styleHeight = null;
+canvas.style.position = "fixed";
+canvas.style.top = "50%";
+canvas.style.left = "50%";
+canvas.style.background = "#db9595";
 
 canvas.onLoad = function () {
-    canvas.style.background = "blue";
     canvas.onResize();
 };
 
@@ -48,9 +51,5 @@ canvas.onResize = function () {
 };
 
 canvas.onRefresh = function () {
-    var imageObj = new Image();
-    imageObj.src = 'images/tree.jpg';
-    imageObj.onload = function () {
-        canvas.context.drawImage(imageObj, 10, 10);
-    }
+    cowgirl.onDraw();
 }
