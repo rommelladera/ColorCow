@@ -8,12 +8,16 @@ cowgirl.speed = 30;
 cowgirl.directionX = 1;
 cowgirl.directionY = 1;
 
+cowgirl.horseSound = new Audio("sounds/horseRun.mp3");
+
 cowgirl.onLoad = function (callback) {
     cowgirl.src = 'images/cowgirl.png';
     cowgirl.onload = callback;
 }
 
 cowgirl.onClick = function (point) {
+    cowgirl.horseSound.play();
+
     cowgirl.centerX = point.x;
     cowgirl.centerY = point.y;
 }
@@ -33,3 +37,8 @@ cowgirl.onRender = function () {
         cowgirl.sizeX, cowgirl.sizeY
         );
 }
+
+cowgirl.horseSound.addEventListener('ended', function () {
+    cowgirl.horseSound.currentTime = 0;
+    cowgirl.horseSound.play();
+});

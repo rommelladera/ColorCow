@@ -1,12 +1,1 @@
-﻿canvas scaling works, check click events coordinates against canvas.
-
-center canvas
-
-scaling canvas to viewport
-
--disable scrolling
--disable pinch zoom
--always landscape
-
-work with canvas.styleX and canvas.styleY
-then center canvas.
+﻿

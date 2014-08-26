@@ -282,6 +282,8 @@
     <Content Include="Content\jquery.mobile.theme-1.4.2.css" />
     <Content Include="Content\jquery.mobile.theme-1.4.2.min.css" />
     <Content Include="cowgirl.js" />
+    <Content Include="Documents\Cowgirl %281%29.jpg" />
+    <Content Include="Documents\Cowgirl %282%29.jpg" />
     <Content Include="Images\cowgirl %28original%29.jpg" />
     <Content Include="Images\cowgirl %28original%29.png" />
     <Content Include="Images\cowgirl.png" />
@@ -308,12 +310,14 @@
   <ItemGroup>
     <Content Include="index.html" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Sounds\horseRun.mp3" />
     <Content Include="viewport.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

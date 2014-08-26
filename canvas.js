@@ -61,13 +61,19 @@ canvas.onRender = function () {
     cowgirl.onRender();
 }
 
-
 function getMousePos(evt) {
     var rect = canvas.getBoundingClientRect();
-    return {
-        x: evt.clientX - rect.left,
-        y: evt.clientY - rect.top
-    };
+    if (canvas.orientation == "Portrait") {
+        return {
+            y: canvas.styleY - evt.clientX - rect.left,
+            x: evt.clientY - rect.top
+        };
+    } else {
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+        };
+    }
 }
 
 canvas.addEventListener('click', function (evt) {
