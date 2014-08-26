@@ -8,7 +8,8 @@ cowgirl.speed = 30;
 cowgirl.directionX = 1;
 cowgirl.directionY = 1;
 
-cowgirl.horseSound = new Audio("http://apps.rhythmonfire.com/colorcow/sounds/horseRun.mp3");
+//cowgirl.horseSound = new Audio("http://apps.rhythmonfire.com/colorcow/sounds/horseRun.mp3");
+cowgirl.horseSound = new Audio("www/sounds/horseRun.mp3");
 
 cowgirl.onLoad = function (callback) {
     cowgirl.src = 'images/cowgirl.png';
