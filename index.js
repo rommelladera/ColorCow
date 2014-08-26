@@ -6,6 +6,8 @@
         lastTime = Date.now();;
         gameLoop();
     });
+
+    alert(window.location.pathname);
 }
 
 var timeOut = null;
