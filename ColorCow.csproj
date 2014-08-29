@@ -284,6 +284,7 @@
     <Content Include="cowgirl.js" />
     <Content Include="Documents\Cowgirl %281%29.jpg" />
     <Content Include="Documents\Cowgirl %282%29.jpg" />
+    <Content Include="horseRun.mp3" />
     <Content Include="Images\cowgirl %28original%29.jpg" />
     <Content Include="Images\cowgirl %28original%29.png" />
     <Content Include="Images\cowgirl.png" />
