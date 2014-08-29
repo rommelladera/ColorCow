@@ -13,28 +13,12 @@ cowgirl.directionY = 1;
 cowgirl.horseSound = new Audio("http://apps.rhythmonfire.com/colorcow/sounds/horseRun.mp3");
 cowgirl.horseSound.play();
 
-alert(window.location.hash);
-cowgirl.horseSound = new Audio(window.location.hash + "sounds/horseRun.mp3");
-cowgirl.horseSound.play();
-
-alert(window.location.host);
-cowgirl.horseSound = new Audio(window.location.host + "sounds/horseRun.mp3");
-cowgirl.horseSound.play();
-
-alert(window.location.hostname);
-cowgirl.horseSound = new Audio(window.location.hostname + "sounds/horseRun.mp3");
-cowgirl.horseSound.play();
-
 alert(window.location.href);
-cowgirl.horseSound = new Audio(window.location.href + "sounds/horseRun.mp3");
+cowgirl.horseSound = new Audio(window.location.href.replace("index.html", "sounds/horseRun.mp3"));
 cowgirl.horseSound.play();
 
 alert(window.location.pathname);
-cowgirl.horseSound = new Audio(window.location.pathname + "sounds/horseRun.mp3");
-cowgirl.horseSound.play();
-
-alert(window.location.search);
-cowgirl.horseSound = new Audio(window.location.search + "sounds/horseRun.mp3");
+cowgirl.horseSound = new Audio(window.location.pathname.replace("index.html", "sounds/horseRun.mp3"));
 cowgirl.horseSound.play();
 
 
