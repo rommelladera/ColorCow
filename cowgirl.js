@@ -10,16 +10,16 @@ cowgirl.directionY = 1;
 
 
 
-cowgirl.horseSound = new Audio("horseRun.mp3");
+cowgirl.horseSound = new Audio("app/www/horseRun.mp3");
 cowgirl.horseSound.play();
 
-alert(window.location.href);
-cowgirl.horseSound = new Audio(window.location.href.replace("index.html", "horseRun.mp3"));
-cowgirl.horseSound.play();
+//alert(window.location.href);
+//cowgirl.horseSound = new Audio(window.location.href.replace("index.html", "horseRun.mp3"));
+//cowgirl.horseSound.play();
 
-alert(window.location.pathname);
-cowgirl.horseSound = new Audio(window.location.pathname.replace("index.html", "horseRun.mp3"));
-cowgirl.horseSound.play();
+//alert(window.location.pathname);
+//cowgirl.horseSound = new Audio(window.location.pathname.replace("index.html", "horseRun.mp3"));
+//cowgirl.horseSound.play();
 
 
 
